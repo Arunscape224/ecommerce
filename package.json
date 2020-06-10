@@ -1,0 +1,24 @@
+{
+  "name": "surface_group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel app.js --out-file app-compiled.js",
+    "start": "nodemon --exec babel-node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
+  }
+}
