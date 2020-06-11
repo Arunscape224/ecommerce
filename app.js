@@ -1,11 +1,15 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+import express from 'express'
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import userRoutes from './routes/user'
+import morgan from 'morgan'
+import expressValidator from 'express-validator';
+
 dotenv.config()
 
-const app = express();
+const app = express()
 
 //db connection
 mongoose.connect(
@@ -20,14 +24,17 @@ mongoose.connect(
    
   mongoose.connection.on('error', err => {
     console.log(`DB connection error: ${err.message}`)
-  });
+  })
 
+app.use(morgan('dev'))
+app.use(bodyParser.json())
+app.use(cookieParser())
+app.use(expressValidator())
 
-app.use(bodyParser.json());
 app.use('/api', userRoutes)
 
 const port = process.env.PORT || 8000
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}`);
+    console.log(`listening on port ${port}`)
 })
