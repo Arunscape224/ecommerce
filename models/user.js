@@ -1,4 +1,3 @@
-//@ts-nocheck
 import mongoose from 'mongoose';
 import crypto from 'crypto';
 import { v1 as uuidv1 } from 'uuid';
@@ -12,6 +11,25 @@ const userSchema = new mongoose.Schema({
     },
 
     lastName: {
+        type: String,
+        trim: true,
+        required: true,
+        maxlength: 32
+    },
+
+    specifier: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+
+    trade: {
+        type: String,
+        trim: true,
+        maxlength: 32
+    },
+
+    company: {
         type: String,
         trim: true,
         required: true,
@@ -51,6 +69,11 @@ const userSchema = new mongoose.Schema({
     wishlist: {
         type: Array,
         default: []
+    },
+
+    photo: {
+        data: Buffer,
+        contentType: String
     }
 
 },  { timestamps: true })

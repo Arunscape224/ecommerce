@@ -1,9 +1,16 @@
-import { Signup, Login } from '../controllers/user'
 import express from 'express'
-import {signupValidator} from '../validation'
 const router = express.Router()
 
-router.post('/signup', signupValidator, Signup)
-router.post('/login', Login)
+import { requireLogin } from '../controllers/auth'
+
+import { userById } from '../controllers/user'
+
+router.get('/secret/:userId', requireLogin, (req, res) => {
+    res.json({
+        user: req.profile
+    })
+})
+
+router.param('userId', userById)
 
 export default router

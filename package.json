@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel app.js --out-file app-compiled.js",
-    "start": "nodemon --exec babel-node app.js"
+    "dev": "nodemon --exec babel-node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,15 +15,17 @@
     "express": "^4.17.1",
     "express-jwt": "^5.3.3",
     "express-validator": "^5.3.1",
+    "formidable": "^1.2.2",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "mongoose": "^5.9.18",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.4",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/node": "^7.10.1",
-    "@babel/preset-env": "^7.10.2"
+    "@babel/preset-env": "^7.10.2",
+    "nodemon": "^2.0.4"
   }
 }
