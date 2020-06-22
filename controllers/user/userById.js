@@ -1,4 +1,4 @@
-import User from '../models/user'
+import User from '../../models/user'
 
 export const userById = (req, res, next, id) => {
     User.findById(id).exec((err, user) => {

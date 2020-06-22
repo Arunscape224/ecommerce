@@ -32,7 +32,6 @@ const userSchema = new mongoose.Schema({
     company: {
         type: String,
         trim: true,
-        required: true,
         maxlength: 32
     },
 
@@ -96,7 +95,6 @@ the client and then store it in the db.
      return this._password
  })
 
-
  userSchema.methods = {
 
     encryptPassword: function (password) {
@@ -116,10 +114,6 @@ the client and then store it in the db.
         return this.encryptPassword(plainText) === this.hashed_password
     } 
  }
-
-
-
-
 
  module.exports = mongoose.model("User", userSchema);
 
