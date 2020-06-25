@@ -15,13 +15,10 @@ const productSchema = new mongoose.Schema({
         required: true
     },
 
-    categories: [{
-        name: String,
-        categoryId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category'
-        }
-    }],
+    categories: {
+        type: Array,
+        default: []
+    },
 
     photo: {
         data: Buffer,
@@ -32,10 +29,15 @@ const productSchema = new mongoose.Schema({
         type: Number
     },
 
+    howManySold: {
+        default: 0,
+        type: Number
+    },
+
     shipping: {
         required: false,
         type: Boolean
-    }
+    },
 
 },  { timestamps: true })
 

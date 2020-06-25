@@ -9,13 +9,10 @@ const categorySchema = new mongoose.Schema({
         maxlength: 32
     },
 
-    products: [{
-        name: String,
-        productId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
-        }
-    }],
+    products: {
+        type: Array,
+        default: []
+    },
     
     photo: {
         data: Buffer,
