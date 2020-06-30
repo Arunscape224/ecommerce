@@ -17,8 +17,7 @@ export const Create = async (req, res) => {
             field with form-data.. 
         */
         let dummy_fields = { 
-            name: 'Stone',
-            products: ["5ef4edbcdd50e74f7590c831"]
+            name: 'Glass'
         }
 
         if(err) {

@@ -1,6 +1,9 @@
 import express from 'express'
 import { productById, Read } from '../controllers/product/productById'
-import { AllProducts} from '../controllers/product/allProducts'
+import { AllProducts } from '../controllers/product/allProducts'
+import { ListBySearch } from '../controllers/product/listBySearch'
+import { Photo } from '../controllers/product/photo'
+import { ListRelated } from '../controllers/product/listRelated'
 import { Delete } from '../controllers/product/deleteProduct'
 import { Create } from '../controllers/product/createProduct'
 import { Update } from '../controllers/product/updateProduct'
@@ -16,6 +19,10 @@ router.post('/product/create/:userId',
         isAuth, 
         isAdmin, 
         Create
+)
+
+router.post('/products/by/search', 
+        ListBySearch
 )
 
 router.delete('/product/delete/:productId/:userId', 
@@ -34,7 +41,12 @@ router.put('/product/update/:productId/:userId',
 
 router.get('/product/:productId', Read)
 
-router.get('/products/all', AllProducts)
+router.get('/products/related/:productId', ListRelated)
+
+router.get('/product/photo/:productId', Photo)
+
+router.get('/products', AllProducts)
+
 
 
 

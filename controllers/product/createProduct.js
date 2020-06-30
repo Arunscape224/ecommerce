@@ -16,11 +16,11 @@ export const Create = async (req, res) => {
             field with form-data.. 
         */
         let dummy_fields = { 
-            name: 'Skyline',
+            name: 'Pinot Grigio',
             price: 20,
             quantity: 100,
             shipping: true,
-            categories: ["5ef4ed950abed54f4e6a7510", "5ef4eda04bfb304f60c0f44d"]
+            categories: ["5ef4fb8e209a025451df0726"]
         }
 
         if(err) {

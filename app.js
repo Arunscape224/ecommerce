@@ -9,7 +9,7 @@ import productRoutes from './routes/product'
 import categoryRoutes from './routes/category'
 import morgan from 'morgan'
 import expressValidator from 'express-validator';
-
+import cors from 'cors'
 dotenv.config()
 
 export const app = express()
@@ -45,6 +45,7 @@ export const close = () => {
   return mongoose.disconnect()
 }
 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(cookieParser())

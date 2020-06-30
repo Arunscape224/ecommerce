@@ -4,7 +4,7 @@ export const AllProducts = async(req, res) => {
 
     let order = await req.query.order ? req.query.order : 'asc';
     let sortBy = await req.query.sortBy ? req.query.sortBy : '_id';
-    let limit = await req.query.limit ? req.query.limit : 6;
+    let limit = await req.query.limit ? parseInt(req.query.limit) : 12;
 
         Product.find()
                .select(['-photo'])
@@ -18,5 +18,5 @@ export const AllProducts = async(req, res) => {
                             error: 'Could not return all categories, there was an error.'
                         })
                     }
-               }) 
+               })
 }

@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema({
-
+    index: {
+        type: Number,
+        required: true
+    },
     name: {
         type: String,
         trim: true,
@@ -32,6 +35,11 @@ const productSchema = new mongoose.Schema({
     howManySold: {
         default: 0,
         type: Number
+    },
+
+    soldPer: {
+        default: "sf",
+        type: String
     },
 
     shipping: {
