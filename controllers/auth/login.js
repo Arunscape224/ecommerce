@@ -17,12 +17,13 @@ export const Login = async (req, res) => {
       const token = await jwt.sign({ _id: user._id }, process.env.JWT_SECRET)
       // store token in cookie and set to expire 
       await res.cookie('access_token', token, { expire: new Date() + 9999 })
-      const { _id, firstName, lastName, email, bio, admin } = user
+      const { _id, firstName, lastName, email, bio, admin, trade } = user
       return await res.json( { token, user: { 
                                        _id, 
                                        email, 
                                        firstName, 
-                                       lastName, 
+                                       lastName,
+                                       trade, 
                                        bio, 
                                        admin 
                                     }

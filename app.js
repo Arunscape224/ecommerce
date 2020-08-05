@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import authRoutes from './routes/auth'
 import userRoutes from './routes/user'
+import reviewRoutes from './routes/review'
 import productRoutes from './routes/product'
 import categoryRoutes from './routes/category'
 import morgan from 'morgan'
@@ -52,6 +53,7 @@ app.use(cookieParser())
 app.use(expressValidator())
 
 app.use('/api', authRoutes)
+app.use('/api', reviewRoutes)
 app.use('/api', userRoutes)
 app.use('/api', categoryRoutes)
 app.use('/api', productRoutes)

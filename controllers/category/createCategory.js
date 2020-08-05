@@ -11,22 +11,14 @@ export const Create = async (req, res) => {
     form.keepExtensions = true
 
     form.parse(req, async (err, fields, files) => {
-        /*  
-            this is because I can't 
-            figure out how to send array as a 
-            field with form-data.. 
-        */
-        let dummy_fields = { 
-            name: 'Glass'
-        }
-
+       
         if(err) {
             return await res.status(400).json({
                 error: 'Image could not be uploaded'
             })
         }
          
-        let category = await new Category(dummy_fields)
+        let category = await new Category(fields)
         const { name, products } = category
         
         if(!name) {

@@ -15,21 +15,15 @@ export const Create = async (req, res) => {
             figure out how to send array as a 
             field with form-data.. 
         */
-        let dummy_fields = { 
-            name: 'Pinot Grigio',
-            price: 20,
-            quantity: 100,
-            shipping: true,
-            categories: ["5ef4fb8e209a025451df0726"]
-        }
-
+       
+        console.log(fields)
         if(err) {
             return await res.status(400).json({
                 error: 'Image could not be uploaded.'
             })
         }
 
-            let product = await new Product(dummy_fields)
+            let product = await new Product(fields)
             const { name, price, categories } = product
             
             if(!name || !price) {
@@ -38,7 +32,7 @@ export const Create = async (req, res) => {
                 })
             }
 
-            if(categories) {
+            if(categories.length) {
                 if(_.every(categories, _.isString)) {
                     let converted = categories.map((category) => mongoose.Types.ObjectId(category))
                     product.categories = converted
@@ -68,12 +62,12 @@ export const Create = async (req, res) => {
                 product.photo.contentType = files.photo.type
             }
 
-            await product.save(async (error, result) => {
+            await product.save( (error, result) => {
                 try {
-                    await res.json(result)
+                     res.json(result)
                 } catch (error) {
                     if(error) {
-                        return await res.status(400).json({
+                        return  res.status(400).json({
                             error: errorHandler(error)
                         })
                     }

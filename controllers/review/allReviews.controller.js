@@ -1,13 +1,15 @@
-import Product from '../../models/product'
+import Review from '../../models/review'
 
-export const AllProducts = async(req, res) => {
+export const AllReviews = async(req, res) => {
 
     let order = await req.query.order ? req.query.order : 'asc';
     let sortBy = await req.query.sortBy ? req.query.sortBy : '_id';
     let limit = await req.query.limit ? parseInt(req.query.limit) : 12;
-
-        Product.find()
+    let product = req.params.productId
+    
+        Review.find({ productId: product })
             //    .select(['-photo'])
+            // console.log(product)
                .sort([[sortBy, order]])
                .limit(limit)
                .exec(async (err, data) => {
@@ -15,7 +17,7 @@ export const AllProducts = async(req, res) => {
                         await res.send(data)
                     } catch(err) {
                         return await res.status(400).json({
-                            error: 'Could not return all categories, there was an error.'
+                            error: 'Could not return all reviews, there was an error.'
                         })
                     }
                })
