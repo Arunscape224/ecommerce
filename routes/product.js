@@ -3,6 +3,7 @@ import { productById, Read } from '../controllers/product/productById'
 import { AllProducts } from '../controllers/product/allProducts'
 import { ListBySearch } from '../controllers/product/listBySearch'
 import { Photo } from '../controllers/product/photo'
+import { InstallShot } from '../controllers/product/install_shot'
 import { ListRelated } from '../controllers/product/listRelated'
 import { Delete } from '../controllers/product/deleteProduct'
 import { Create } from '../controllers/product/createProduct'
@@ -44,6 +45,7 @@ router.get('/product/:productId', Read)
 router.get('/products/related/:productId', ListRelated)
 
 router.get('/product/photo/:productId', Photo)
+router.get('/product/installshot/:productId', InstallShot)
 
 router.get('/products', AllProducts)
 

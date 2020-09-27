@@ -15,7 +15,7 @@ export const AllProducts = async(req, res) => {
                         await res.send(data)
                     } catch(err) {
                         return await res.status(400).json({
-                            error: 'Could not return all categories, there was an error.'
+                            error: 'Could not return all products, there was an error.'
                         })
                     }
                })

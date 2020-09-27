@@ -5,7 +5,7 @@ import { isAuth } from '../controllers/auth/isAuth'
 import { userById } from '../controllers/user/userById' 
 import { ReadUser } from '../controllers/user/readUser' 
 import { UpdateUser } from '../controllers/user/updateUser' 
-import {  AllUsers } from '../controllers/user/allUsers'
+import { AllUsers } from '../controllers/user/allUsers'
 
 const router = express.Router()
 

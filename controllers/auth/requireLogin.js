@@ -6,3 +6,4 @@ export const requireLogin = expressJwt({
     secret: process.env.JWT_SECRET,
     userProperty: "auth"
  })
+

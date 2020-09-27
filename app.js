@@ -7,6 +7,8 @@ import authRoutes from './routes/auth'
 import userRoutes from './routes/user'
 import reviewRoutes from './routes/review'
 import productRoutes from './routes/product'
+import braintreeRoutes from './routes/braintree'
+import orderRoutes from './routes/order'
 import categoryRoutes from './routes/category'
 import morgan from 'morgan'
 import expressValidator from 'express-validator';
@@ -49,6 +51,8 @@ export const close = () => {
 app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
 app.use(cookieParser())
 app.use(expressValidator())
 
@@ -57,6 +61,8 @@ app.use('/api', reviewRoutes)
 app.use('/api', userRoutes)
 app.use('/api', categoryRoutes)
 app.use('/api', productRoutes)
+app.use('/api', braintreeRoutes)
+app.use('/api', orderRoutes)
 
 const port = process.env.PORT || 8000
 

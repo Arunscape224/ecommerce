@@ -6,6 +6,12 @@ const productSchema = new mongoose.Schema({
         required: true
     },
 
+    vendor: {
+        type: String,
+        trim: true,
+        maxlength: 32
+    },
+
     name: {
         type: String,
         trim: true,
@@ -35,12 +41,7 @@ const productSchema = new mongoose.Schema({
         trim: true, 
         required: true
     },
-
-    categories: {
-        type: Array,
-        default: []
-    },
-
+    
     photo: {
         data: Buffer,
         contentType: String
