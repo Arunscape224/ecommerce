@@ -26,7 +26,8 @@ export const conn = () => {
         { 
             useNewUrlParser: true, 
             useCreateIndex: true,
-            useUnifiedTopology: true 
+            useUnifiedTopology: true,
+            useFindAndModify: false  
         },
       )
       .then((res, err) =>  {

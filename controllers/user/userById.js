@@ -1,6 +1,7 @@
 import User from '../../models/user'
 
 export const userById = (req, res, next, id) => {
+    console.log(User)
     User.findById(id).exec((err, user) => {
         if(err || !user) {
             return res.status(400).json({
