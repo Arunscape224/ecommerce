@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new mongoose.Schema({
     index: {
@@ -116,6 +116,11 @@ const productSchema = new mongoose.Schema({
         required: false,
         type: Boolean
     },
+
+    categories: [{
+        type: Schema.ObjectId,
+        ref: 'Category'
+    }],
 
     materialType: {
         type: String,
