@@ -1,6 +1,6 @@
-import Product from '../../models/product'
+const Product = require('../../models/product')
 
-export const ListRelated = async (req, res) => {
+exports.ListRelated = async (req, res) => {
     let limit = await req.query.limit ? parseInt(req.query.limit) : 6
     let category = await req.query.category ? parseInt(req.query.category) : 0
 

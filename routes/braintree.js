@@ -1,9 +1,9 @@
-import express from 'express'
-import { isAuth } from '../controllers/auth/isAuth'
-import { requireLogin } from '../controllers/auth/requireLogin'
-import { userById } from '../controllers/user/userById' 
-import { generateToken } from '../controllers/braintree/braintree'
-import { processPayment } from '../controllers/braintree/processPayment'
+const express = require('express')
+const { isAuth } = require('../controllers/auth/isAuth')
+const { requireLogin } = require('../controllers/auth/requireLogin')
+const { userById } = require('../controllers/user/userById')
+const { generateToken } = require('../controllers/braintree/braintree')
+const { processPayment } = require('../controllers/braintree/processPayment')
 
 const router = express.Router()
 
@@ -19,4 +19,4 @@ processPayment)
 
 router.param("userId", userById)
 
-export default router 
+module.exports = router 

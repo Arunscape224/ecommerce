@@ -1,8 +1,8 @@
-import { errorHandler } from '../../helper/dbErrorHandler'
-import _ from 'lodash'
-import Category from '../../models/category'
+const { errorHandler } = require('../../helper/dbErrorHandler')
+const _ = require('lodash')
+const Category = require('../../models/category')
 
-export const Delete = async (req, res) => {
+exports.Delete = async (req, res) => {
     let product = await req.product
     
     if(product.categories) {

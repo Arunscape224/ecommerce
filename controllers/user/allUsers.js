@@ -1,6 +1,6 @@
-import User from '../../models/user'
+const User = require('../../models/user')
 
-export const AllUsers = async (req, res) => {
+exports.AllUsers = async (req, res) => {
     try {
         return await User.find()
                          .select(['-photo'])

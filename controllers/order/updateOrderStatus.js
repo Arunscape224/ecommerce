@@ -1,8 +1,7 @@
-import { Order } from '../../models/order'
-import { errorHandler } from '../../helper/dbErrorHandler'
+const { Order } = require('../../models/order')
+const { errorHandler } = require ('../../helper/dbErrorHandler')
 
-export const updateOrderStatus =  (req, res) => {
-    console.log("HOLY FUCKING SHIT")
+exports.updateOrderStatus =  (req, res) => {
    Order.update({ _id: req.body.orderId}, {$set: {status: req.body.status}}, (err, order) => {
         if(err) {
             return res.status(400).json({

@@ -1,8 +1,8 @@
-import formidable from 'formidable'
-import _ from 'lodash'
-import fs from 'fs'
+const formidable = require('formidable')
+const _ = require('lodash')
+const fs = require('fs')
 
-export const Update = async (req, res) => {
+exports.Update = async (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
 

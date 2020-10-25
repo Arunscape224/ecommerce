@@ -1,7 +1,7 @@
-import User from '../../models/user' 
-import jwt from 'jsonwebtoken'
+const User = require('../../models/user')
+const jwt = require('jsonwebtoken')
 
-export const Login = async (req, res) => {
+exports.Login = async (req, res) => {
     const { email, password } = req.body
     await User.findOne({ email }, async(err, user) => {
       if(err || !user) {

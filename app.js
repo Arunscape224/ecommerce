@@ -1,25 +1,25 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cookieParser from 'cookie-parser'
-import dotenv from 'dotenv'
-import mongoose from 'mongoose'
-import authRoutes from './routes/auth'
-import userRoutes from './routes/user'
-import reviewRoutes from './routes/review'
-import productRoutes from './routes/product'
-import braintreeRoutes from './routes/braintree'
-import orderRoutes from './routes/order'
-import categoryRoutes from './routes/category'
-import morgan from 'morgan'
-import expressValidator from 'express-validator';
-import cors from 'cors'
+const express = require('express')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const dotenv = require('dotenv')
+const mongoose = require('mongoose')
+const authRoutes = require('./routes/auth')
+const userRoutes = require('./routes/user')
+const reviewRoutes = require('./routes/review')
+const productRoutes = require('./routes/product')
+const braintreeRoutes = require('./routes/braintree')
+const orderRoutes = require('./routes/order')
+const categoryRoutes = require('./routes/category')
+const morgan = require('morgan')
+const expressValidator = require('express-validator')
+const cors = require('cors')
 dotenv.config()
 
-export const app = express()
+const app = express()
 const uri = process.env.MONGO_URI || 8000
 
 //db connection
-export const conn = () => {
+const conn = () => {
   return new Promise((resolve, reject) => {
     mongoose.connect(
       uri,
@@ -45,9 +45,9 @@ export const conn = () => {
 }
 
 // close db connection, for testing
-export const close = () => {
-  return mongoose.disconnect()
-}
+// export const close = () => {
+//   return mongoose.disconnect()
+// }
 
 app.use(cors())
 app.use(morgan('dev'))

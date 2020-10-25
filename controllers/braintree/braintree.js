@@ -1,6 +1,6 @@
-import braintree from 'braintree'
+const braintree = require('braintree')
 
-export const gateway = new braintree.BraintreeGateway({
+exports.gateway = new braintree.BraintreeGateway({
     environment: braintree.Environment.Sandbox,
     merchantId: process.env.BRAINTREE_MERCHANT_ID,
     publicKey: process.env.BRAINTREE_PUBLIC_KEY,

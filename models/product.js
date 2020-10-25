@@ -1,4 +1,4 @@
-import mongoose, { Schema } from 'mongoose';
+const mongoose = require("mongoose")
 
 const productSchema = new mongoose.Schema({
     index: {
@@ -118,7 +118,7 @@ const productSchema = new mongoose.Schema({
     },
 
     categories: [{
-        type: Schema.ObjectId,
+        type: mongoose.Schema.ObjectId,
         ref: 'Category'
     }],
 

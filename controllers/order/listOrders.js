@@ -1,7 +1,7 @@
-import { Order } from '../../models/order'
-import { errorHandler } from '../../helper/dbErrorHandler'
+const { Order } = require('../../models/order')
+const { errorHandler } = require('../../helper/dbErrorHandler')
 
-export const listOrders =  (req, res) => {
+exports.listOrders =  (req, res) => {
     Order.find()
     .populate("user", "_id firstName lastName address")
     .sort('-created')

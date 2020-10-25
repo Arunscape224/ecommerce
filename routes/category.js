@@ -1,13 +1,13 @@
-import express from 'express'
-import { Read, categoryById } from '../controllers/category/categoryById'
-import { Delete } from '../controllers/category/deleteCategory'
-import { AllCategories } from '../controllers/category/allCategories'
-import { Create } from '../controllers/category/createCategory'
-import { Update } from '../controllers/category/updateCategory'
-import { isAdmin } from '../controllers/auth/isAdmin'
-import { isAuth } from '../controllers/auth/isAuth'
-import { requireLogin } from '../controllers/auth/requireLogin'
-import { userById } from '../controllers/user/userById' 
+const express = require('express')
+const { Read, categoryById } = require('../controllers/category/categoryById')
+const { Delete } = require('../controllers/category/deleteCategory')
+const { AllCategories } = require('../controllers/category/allCategories')
+const { Create } = require('../controllers/category/createCategory')
+const { Update } = require('../controllers/category/updateCategory')
+const { isAdmin } = require('../controllers/auth/isAdmin')
+const { isAuth } = require('../controllers/auth/isAuth')
+const { requireLogin } = require('../controllers/auth/requireLogin')
+const { userById } = require('../controllers/user/userById')
 
 const router = express.Router()
 
@@ -41,4 +41,4 @@ router.get('/categories/all', AllCategories)
 router.param('userId', userById)
 router.param('categoryId', categoryById)
 
-export default router
+module.exports = router

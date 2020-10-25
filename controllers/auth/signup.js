@@ -1,9 +1,9 @@
-import { errorHandler } from '../../helper/dbErrorHandler'
-import User from '../../models/user' 
-import formidable from 'formidable'
-import fs from 'fs'
+const { errorHandler } = require('../../helper/dbErrorHandler')
+const User =  require('../../models/user')
+const formidable = require('formidable')
+const fs = require('fs')
 
-export const Signup = async (req, res) => {
+exports.Signup = async (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
  

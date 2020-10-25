@@ -1,17 +1,17 @@
-import express from 'express'
-import { productById, Read } from '../controllers/product/productById'
-import { AllProducts } from '../controllers/product/allProducts'
-import { ListBySearch } from '../controllers/product/listBySearch'
-import { Photo } from '../controllers/product/photo'
-import { InstallShot } from '../controllers/product/install_shot'
-import { ListRelated } from '../controllers/product/listRelated'
-import { Delete } from '../controllers/product/deleteProduct'
-import { Create } from '../controllers/product/createProduct'
-import { Update } from '../controllers/product/updateProduct'
-import { isAdmin } from '../controllers/auth/isAdmin'
-import { isAuth } from '../controllers/auth/isAuth'
-import { requireLogin } from '../controllers/auth/requireLogin'
-import { userById } from '../controllers/user/userById' 
+const express = require('express')
+const { productById, Read } = require('../controllers/product/productById')
+const { AllProducts } = require('../controllers/product/allProducts')
+const { ListBySearch } = require('../controllers/product/listBySearch')
+const { Photo } = require('../controllers/product/photo')
+const { InstallShot } = require('../controllers/product/install_shot')
+const { ListRelated } = require('../controllers/product/listRelated')
+const { Delete } = require('../controllers/product/deleteProduct')
+const { Create } = require('../controllers/product/createProduct')
+const { Update } = require('../controllers/product/updateProduct')
+const { isAdmin } = require('../controllers/auth/isAdmin')
+const { isAuth } = require('../controllers/auth/isAuth')
+const { requireLogin } = require('../controllers/auth/requireLogin')
+const { userById } = require('../controllers/user/userById')
 
 const router = express.Router()
 
@@ -55,4 +55,4 @@ router.get('/products', AllProducts)
 router.param('userId', userById)
 router.param('productId', productById)
 
-export default router
+module.exports = router

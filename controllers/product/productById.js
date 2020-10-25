@@ -1,6 +1,6 @@
-import Product from '../../models/product'
+const Product = require('../../models/product')
 
-export const productById = async (req, res, next, id) => {
+exports.productById = async (req, res, next, id) => {
     return await Product.findById(id).exec((err, product) => {
         try {
             req.product = product
@@ -13,7 +13,7 @@ export const productById = async (req, res, next, id) => {
     })
 }
 
-export const Read = async (req, res) => {
+exports.Read = async (req, res) => {
     req.product.photo = undefined
     return await res.json(req.product)
 }

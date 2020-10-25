@@ -1,8 +1,8 @@
-import expressJwt from 'express-jwt'
-import dotenv from 'dotenv'
+const expressJwt = require('express-jwt')
+const dotenv = require('dotenv')
 dotenv.config()
 
-export const requireLogin = expressJwt({
+exports.requireLogin = expressJwt({
     secret: process.env.JWT_SECRET,
     userProperty: "auth"
  })

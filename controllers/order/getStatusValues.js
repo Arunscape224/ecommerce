@@ -1,5 +1,5 @@
-import { Order } from '../../models/order'
+const { Order } = require('../../models/order')
 
-export const getStatusValues =  (req, res) => {
+exports.getStatusValues =  (req, res) => {
     res.json(Order.schema.path('status').enumValues)
 }

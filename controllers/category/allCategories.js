@@ -1,6 +1,6 @@
-import Category from '../../models/category'
+const Category = require('../../models/category')
 
-export const AllCategories = async (req, res) => {
+exports.AllCategories = async (req, res) => {
     try {
         return await Category.find()
                              .select(['-photo'])

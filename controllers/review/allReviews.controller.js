@@ -1,6 +1,6 @@
-import Review from '../../models/review'
+const Review = require('../../models/review')
 
-export const AllReviews = async(req, res) => {
+exports.AllReviews = async(req, res) => {
 
     let order = await req.query.order ? req.query.order : 'asc';
     let sortBy = await req.query.sortBy ? req.query.sortBy : '_id';

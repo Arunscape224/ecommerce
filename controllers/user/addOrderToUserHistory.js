@@ -1,7 +1,7 @@
-import User from '../../models/user'
+const User = require('../../models/user')
 
 
-export const addOrderToUserHistory = (req, res, next) => {
+exports.addOrderToUserHistory = (req, res, next) => {
     let history = []
 
     req.body.order.products.forEach((item) => {

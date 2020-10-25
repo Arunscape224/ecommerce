@@ -1,6 +1,6 @@
-import User from '../../models/user'
+const User = require('../../models/user')
 
-export const UpdateUser = (req, res) => {
+exports.UpdateUser = (req, res) => {
     User.findOneAndUpdate({ _id: req.profile._id }, 
                           { $set: req.body }, 
                           { new: true }, 

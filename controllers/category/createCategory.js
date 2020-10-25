@@ -1,12 +1,12 @@
-import Category from '../../models/category'
-import Product from '../../models/product'
-import { errorHandler } from '../../helper/dbErrorHandler'
-import formidable from 'formidable'
-import fs from 'fs'
-import _ from 'lodash'
-import mongoose from 'mongoose'
+const Category = require('../../models/category')
+const Product = require('../../models/product')
+const { errorHandler } = require('../../helper/dbErrorHandler')
+const formidable = require('formidable')
+const fs = require('fs')
+const _ = require('lodash')
+const mongoose = require('mongoose')
 
-export const Create = async (req, res) => {
+exports.Create = async (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
 

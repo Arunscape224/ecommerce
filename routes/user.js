@@ -1,12 +1,12 @@
-import express from 'express'
-import { isAdmin } from '../controllers/auth/isAdmin'
-import { requireLogin } from '../controllers/auth/requireLogin'
-import { isAuth } from '../controllers/auth/isAuth'
-import { userById } from '../controllers/user/userById' 
-import { ReadUser } from '../controllers/user/readUser' 
-import { UpdateUser } from '../controllers/user/updateUser' 
-import { AllUsers } from '../controllers/user/allUsers'
-import { PurchaseHistory } from '../controllers/user/purchaseHistory'
+const express = require('express')
+const { isAdmin } = require('../controllers/auth/isAdmin')
+const { requireLogin } = require('../controllers/auth/requireLogin')
+const { isAuth } = require('../controllers/auth/isAuth')
+const { userById } = require('../controllers/user/userById') 
+const { ReadUser } = require('../controllers/user/readUser') 
+const { UpdateUser } = require('../controllers/user/updateUser') 
+const { AllUsers } = require('../controllers/user/allUsers')
+const { PurchaseHistory } = require('../controllers/user/purchaseHistory')
 
 const router = express.Router()
 
@@ -46,4 +46,4 @@ router.get('/orders/by/user/:userId',
 
 router.param('userId', userById)
 
-export default router
+module.exports = router

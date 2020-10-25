@@ -1,6 +1,6 @@
-import { gateway } from './braintree'
+const { gateway } = require('./braintree')
 
-export const processPayment = (req, res) => {
+exports.processPayment = (req, res) => {
     
    let nonceFromTheClient = req.body.paymentMethodNonce
    let amountFromTheClient = req.body.amount

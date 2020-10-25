@@ -1,6 +1,6 @@
-import Product from '../../models/product'
+const Product = require('../../models/product')
 
-export const AllProducts = async(req, res) => {
+exports.AllProducts = async(req, res) => {
 
     let order = await req.query.order ? req.query.order : 'asc';
     let sortBy = await req.query.sortBy ? req.query.sortBy : '_id';

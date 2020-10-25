@@ -1,6 +1,6 @@
-import {Order, CartItem} from '../../models/order'
+const { Order } = require('../../models/order')
 
-export const CreateOrder =  (req, res) => {
+exports.CreateOrder =  (req, res) => {
     req.body.order.user = req.profile
     const order = new Order(req.body.order)
     order.save((error, data) => {

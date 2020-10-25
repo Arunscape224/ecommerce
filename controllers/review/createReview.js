@@ -1,10 +1,10 @@
-import Review from '../../models/review'
-import { errorHandler } from '../../helper/dbErrorHandler'
-import formidable from 'formidable'
-import fs from 'fs'
-import _ from 'lodash'
+const Review = require('../../models/review')
+const { errorHandler } = require('../../helper/dbErrorHandler')
+const formidable = require('formidable')
+const fs = require('fs')
+const _ = require('lodash')
 
-export const Create = async (req, res) => {
+exports.Create = async (req, res) => {
     let form = new formidable.IncomingForm()
     form.keepExtensions = true
 

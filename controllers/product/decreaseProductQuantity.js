@@ -1,6 +1,6 @@
-import Product from '../../models/product'
+const Product = require('../../models/product')
 
-export const decreaseProductQuantity = (req, res, next) => {
+exports.decreaseProductQuantity = (req, res, next) => {
   let bulkOps = req.body.order.products.map((item) => {
       return {
           updateOne: {

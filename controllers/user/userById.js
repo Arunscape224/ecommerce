@@ -1,6 +1,6 @@
-import User from '../../models/user'
+const User = require('../../models/user')
 
-export const userById = (req, res, next, id) => {
+exports.userById = (req, res, next, id) => {
     console.log(User)
     User.findById(id).exec((err, user) => {
         if(err || !user) {

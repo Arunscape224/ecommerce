@@ -1,7 +1,7 @@
-import _ from 'lodash'
-import Product from '../../models/product'
+const _ = require('lodash')
+const Product =  require('../../models/product')
 
-export const Delete = async (req, res) => {
+exports.Delete = async (req, res) => {
     let category = await req.category
 
     if(category.products) {
