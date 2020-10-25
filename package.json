@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon node app.js",
-    "start": "node ./build/app.js",
-    "clean": "rm -rf build && mkdir build",
-    "build": "npm run clean && npm run build-server",
-    "build-server": "babel -d ./build ./server -s",
+    "start": "nodemon node app.js",
     "test": "mocha --recursive --exit"
   },
   "author": "",
